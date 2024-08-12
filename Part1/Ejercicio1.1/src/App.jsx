@@ -8,9 +8,17 @@ const Header = (props) => {
 //Content
 const Content = (props) => {
   return (
-    <p>
-      {props.part} {props.exercises}
-    </p>
+    <>
+      <p>
+        {props.part[0]} {props.exercises[0]}
+      </p>
+      <p>
+        {props.part[0]} {props.exercises[1]}
+      </p>
+      <p>
+        {props.part[0]} {props.exercises[1]}
+      </p>
+    </>
   )
 }
 
@@ -18,7 +26,7 @@ const Content = (props) => {
 const Total = (props) => {
   return (
     <p>
-      Number of exercises {props.ex1 + props.ex2 + props.ex3}
+      Number of exercises {props.exs[0] + props.exs[1] + props.exs[2]}
     </p>
   )
 }
@@ -32,13 +40,14 @@ const App = () => {
   const part3 = 'State of a component'
   const exercises3 = 14
 
+  const parts = [part1, part2, part3]
+  const exs = [exercises1, exercises2, exercises3]
+
   return (
     <div>
       <Header course={course} />
-      <Content part = {part1} exercises = {exercises1} />
-      <Content part = {part2} exercises = {exercises2} />
-      <Content part = {part3} exercises = {exercises3} />
-      <Total ex1 = {exercises1} ex2 = {exercises2} ex3 = {exercises3} />
+      <Content part = {parts} exercises = {exs} />
+      <Total exs = {exs} />
     </div>
   )
 }
